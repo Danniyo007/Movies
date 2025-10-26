@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+</head>
+<style>
+    *{
+        text-decoration: none;
+    }
+    .navbar{
+        
+        background-color: darkblue;
+        
+        width: 100%;
+    }
+    .navdiv{
+        display: flex;
+        justify-content: space-around;
+        
+    }
+    nav ul{
+        display: flex;
+        justify-content: space-evenly;
+        gap: 2rem;
+        align-self: center;
+    }
+    nav ul li{
+        display: flex;
+        position: relative;
+        
+    }
+    nav a{
+        color: antiquewhite;
+        
+        
+    }
+     nav ul li :hover {
+   
+    color: ghostwhite;
+    }
+    .logo{
+        margin: 0;
+        padding: 6px;
+    }
+ul li ul.dropdown li{
+    display: block;
+    background-color: white;
+    color: gray;
+    padding: 10px 10px;
+    text-align: center;
+    list-style: none;
+    box-shadow: 1px 1px 1px gray;
+    border-bottom: 1px solid gray;
+}
+ul li ul.dropdown li a{
+    color: gray;
+list-style: none;
+text-decoration: none;
+
+}
+ul li ul.dropdown li :hover{
+    color:wheat ;
+    
+    text-decoration: none;
+    
+}
+ul li ul.dropdown{
+width: 120px;
+top:150%;
+position: absolute;
+z-index: 999;
+right: -100%;
+display: none;
+}
+ul li:hover ul.dropdown{
+    display: block;
+}
+.video{
+    background-color: darkblue;
+    width: 170px;
+    text-align: center;
+    color: white;
+
+}
+.video a{
+    color: white;
+    font-size: small;
+    width: 100%;
+    
+}
+.video a :hover{
+    color: yellow;
+    
+}
+.container{
+    justify-self: center;
+    display: flex;
+    gap: 1rem;
+}
+.video a :hover{
+
+}
+@media(max-width:1100px){
+    .container{
+        margin-left: 100px;
+        display: grid;
+        grid-template-columns: 16% 16%;
+        column-gap: 8rem;
+        
+    }
+    .navbar ul{
+        display: none;
+    }
+}
+@media(min-width:1100px){
+    .navbar .hide{
+display: none;
+    }
+}
+</style>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+<p class="logo"><img style="" src="./images/movielogo.jpg" alt="" width="60px"></p>
+<ul>
+    <li><a id="list" href="#">Home</a></li>
+     <li><a id="list" href="#">K-Dramas</a></li>
+      <li><a id="list" href="#">TV Series</a></li>
+       
+        <li><a id="list" href="#" style="height: 170%;">Genres ↓ </a>
+        <ul class="dropdown">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Adventures</a></li>
+            <li><a href="#">Animation</a></li>
+            <li><a href="#">Anime</a></li>
+            <li><a href="#">Sport</a></li>
+
+        </ul> 
+        </li>
+        <li><a id="list" href="#">Movies</a></li>
+</ul>
+ <a class="hide" href="#" style="align-self: center;"><img src="./images/menuicon.svg" alt="" width="40px"></a>
+        </div>
+       
+    </nav>
+    <hr>
+<h1 style="text-align: center;">DOWNLOAD YOUR FAVOURITES MOVIES HERE</h1>
+<div class="container">
+    <div class="video">
+        <a href=""><img src="./images/1-percent-of-anything-korean-drama.webp" alt="" width="170px">
+        <p>1 Percent Of Anything S01 <br> (Complete) | <br> Korean Drama</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./images/first-lady-korean-drama.webp" alt="" width="170px">
+        <p>First Lady S01 <br> (Complete) | <br> Korean Drama</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./images/flower-i-am-korean-drama.webp" alt="" width="170px">
+        <p>Flower I Am S01 <br> (Complete) | <br> Korean Drama</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./images/hwangjini-korean-drama-nkiri.webp" alt="" width="170px">
+        <p>Hwangjini S01 <br> (Complete) | <br> Korean Drama</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./images/mary-kills-people-korean-drama.webp" alt="" width="170px">
+        <p>Mary Kills People S01 <br> (Complete) | <br> Korean Drama</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./images/the-glory-korean-movie.webp" alt="" width="170px">
+        <p>The Glory S01 <br> (Complete) | <br> Korean Drama</p></a>
+    </div>
+</div><br>
+<div class="container">
+ <div class="video">
+       <a href="#"> <img src="./images/The-Story-of-Bihyung-Enchanted-Master-of-the-Goblin-S01-korean-drama.webp" alt="" width="170px">
+        <p>The Story Of Bihyung Enchanted Master Of The Goblin S01 <br> (Complete) | <br> Korean Drama</p></a>
+    </div>
+     <div class="video">
+       <a href="#"> <img src="./images/thee-dream-life-of-mr-kim-korean-drama-nkiri.webp" alt="" width="170px">
+        <p>The Dream Life Of Mr Kim S01 <br> (Complete) | <br> Korean Drama</p></a>
+    </div>
+     <div class="video">
+       <a href="#"> <img src="./images/typhoon-family-korean-drama.webp" alt="" width="170px">
+      <p>Typhoon Family S01 <br> (Complete) | <br> Korean Drama</p></a>
+    </div>
+     <div class="video">
+        <a href="#"><img src="./images/walking-on-thin-ice-korean-drama.webp" alt="" width="170px">
+        <p>Walking On Thin Ice S01 <br> (Complete) | <br> Korean Drama</p></a>
+    </div>
+     <div class="video">
+        <a href="#"><img src="./images/witchs-court-korean-drama.webp" alt="" width="170px">
+        <p>Witchs Court S01 <br> (Complete) | <br> Korean Drama</p></a>
+    </div>
+     <div class="video">
+        <a href="#"><img src="./images/would-you-marry-me-korean-drama.webp" alt="" width="170px">
+       <p>Would You Marry Me S01 <br> (Complete) | <br> Korean Drama</p></a> 
+    </div>
+</div>
+</body>
+</html>
