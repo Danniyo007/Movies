@@ -7,8 +7,9 @@
 </head>
 <style>
     *{
-        text-decoration: none;
+     list-style: none;   text-decoration: none;
     }
+   
     .navbar{
         
         background-color: darkblue;
@@ -79,10 +80,12 @@ ul li:hover ul.dropdown{
 }
 .video{
     background-color: darkblue;
-    width: 170px;
+    width: 200px;
     text-align: center;
     color: white;
-
+    }
+.video img{
+    width: 200px;
 }
 .video a{
     color: white;
@@ -98,55 +101,163 @@ ul li:hover ul.dropdown{
     justify-self: center;
     display: flex;
     gap: 1rem;
+    
 }
 .video a :hover{
 
 }
-@media(max-width:1100px){
+@media(max-width:1290px) and (min-width: 700px) {
     .container{
-        margin-left: 100px;
+        width: 100%;
         display: grid;
-        grid-template-columns: 16% 16%;
-        column-gap: 8rem;
+        grid-template-columns: 16% 16% 16% ;
+        column-gap: 7.5rem;
+        justify-content: center;
         
     }
     .navbar ul{
         display: none;
     }
+    .video{
+        width: 220px;
+    }
+    .video img{
+        width: 220px;
+    }
+    .navbar ul{
+        display: flex;
+    }
+    .navbar .hide{
+        display: none;
+    }
+    .dropdowns{
+        display: none;
+        top: 100%;
+    }
+    .dropdowns li{
+        display: none;
+    }
+    
 }
-@media(min-width:1100px){
+
+@media(max-width:700px) {
+    .container{
+  width: 100%;
+        display: grid;
+        grid-template-columns: 16% 16%;
+        column-gap: 9rem;
+    
+}
+    .navbar .lol{
+        display: none;
+    }
+    ul li ul.dropdown{
+        width: 120px;
+top:100%;
+position: absolute;
+
+right: 70%;
+display: none;
+    }
+}
+@media(max-width:413px) {
+    .container{
+         width: 100%;
+        display: flex;
+        flex-direction: column;
+align-items: center;
+    }
+    .navbar .lol{
+        display: none;
+    }
+    .video{
+        width: 300px;
+    }
+    .video img{
+        width: 300px;
+    }
+    
+}
+
+@media(min-width:1290px){
     .navbar .hide{
 display: none;
     }
+    .dropdowns{
+        display: none;
+    }
+    .dropdowns li{
+        display: none;
+    }
+    .dropdowns{
+        top: 100%;
+    }
+}
+.dropdowns{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: -2%;
+    width: 100%;
+    background: #f8f9fa;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+}
+.dropdowns li a{
+    display: block;
+    
+    padding: 12px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+}
+.dropdowns li a:hover{
+background: gray;
+}.show{
+    display: block;
 }
 </style>
 <body>
     <nav class="navbar">
         <div class="navdiv">
 <p class="logo"><img style="" src="./movielogo.jpg" alt="" width="60px"></p>
-<ul>
+<ul class="lol">
     <li><a id="list" href="#">Home</a></li>
-     <li><a id="list" href="#">K-Dramas</a></li>
+     <li><a id="list" href="#">Anime Series</a></li>
       <li><a id="list" href="#">TV Series</a></li>
        
-        <li><a id="list" href="#" style="height: 170%;">Genres ↓ </a>
+        <li><a id="list" href="#" style="height: 170%;">Genres ▼ </a>
         <ul class="dropdown">
             <li><a href="#">Action</a></li>
             <li><a href="#">Adventures</a></li>
             <li><a href="#">Animation</a></li>
-            <li><a href="#">Anime</a></li>
             <li><a href="#">Sport</a></li>
 
         </ul> 
         </li>
         <li><a id="list" href="#">Movies</a></li>
 </ul>
- <a class="hide" href="#" style="align-self: center;"><img src="./menuicon.svg" alt="" width="40px"></a>
+ <li style="align-self: center;"><a class="hide" href="#" style="align-self: center;"><img onclick="toggleDropdown()" src="./menuicon.svg" alt="" width="40px"></a><ul id="dropdowns" class="dropdowns">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Anime Series</a></li>
+    <li><a href="#">TV Series</a></li>
+    <li><a href="#" style="height: 170%;">Genres ▼ </a>
+        <ul class="dropdown">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Adventures</a></li>
+            <li><a href="#">Animation</a></li>
+            <li><a href="#">Sport</a></li>
+
+        </ul> 
+        </li>
+        <li><a href="#">Movies</a></li>
+ </ul></li>
         </div>
        
     </nav>
     <hr>
 <h1 style="text-align: center;">DOWNLOAD YOUR FAVOURITES MOVIES HERE</h1>
+<h3 style="color: red;text-align: center;">K-Drama Series</h3>
 <div class="container">
     <div class="video">
         <a href=""><img src="./1-percent-of-anything-korean-drama.webp" alt="" width="170px">
@@ -199,5 +310,131 @@ display: none;
        <p>Would You Marry Me S01 <br> (Complete) | <br> Korean Drama</p></a> 
     </div>
 </div>
+<h3 style="color: red;text-align: center;">New Movies Upload</h3>
+<div class="container">
+    <div class="video">
+        <a href=""><img src="./first.webp" alt="" width="170px">
+        <p>The Perfect Neighbour(2025) | <br> A documentary</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./2.webp" alt="" width="170px">
+        <p>The Roses(2025) | <br> Hollywood Movie</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./3.webp" alt="" width="170px">
+        <p>East Of Wall(2025) | <br> Hollywood Movie</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./4.webp" alt="" width="170px">
+        <p>The Long Walk(2025) | <br> Hollywood Movie</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./5.webp" alt="" width="170px">
+        <p>Dead Of Winter(2025) |<br>Hollywood Movie</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./6.webp" alt="" width="170px">
+        <p>The Hand That Rocks the Cradle(2025) | <br>    Hollywood Movie</p></a>
+    </div>
+</div><br>
+<div class="container">
+ <div class="video">
+       <a href="#"> <img src="./7.webp" alt="" width="170px">
+        <p>A Royal Montana Christmas | <br> Hollywood Movie</p></a>
+    </div>
+     <div class="video">
+       <a href="#"> <img src="./8.webp" alt="" width="170px">
+        <p>Anemone(2025) | <br> Hollywood Movie</p></a>
+    </div>
+     <div class="video">
+       <a href="#"> <img src="./9.jpg" alt="" width="170px">
+      <p>Good Boy(2025) | <br> Hollywood Movie</p></a>
+    </div>
+     <div class="video">
+        <a href="#"><img src="./10.webp" alt="" width="170px">
+        <p>OG (2025) | <br>Hollywood Movie</p></a>
+    </div>
+     <div class="video">
+        <a href="#"><img src="./11.webp" alt="" width="170px">
+        <p>A House Of Dynamite (2025) | <br> Hollywood Movie</p></a>
+    </div>
+     <div class="video">
+        <a href="#"><img src="./12.webp" alt="" width="170px">
+       <p>The Elixer(2025) | <br> Hollywood Movie</p></a> 
+    </div>
+</div>
+<h3 style="color: red;text-align: center;">New Series Upload</h3>
+<div class="container">
+    <div class="video">
+        <a href=""><img src="./billy-the-kid-hollywood-series.webp" alt="" width="170px">
+        <p>Billy The Kid S03 | <br> TV Series</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./bostom-blue-hollywood-series.jpg" alt="" width="170px">
+        <p>Boston Blue S01 | <br> TV Series</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./fire-country-tv-series.webp" alt="" width="170px">
+        <p>Fire Country S04 | <br> TV Series</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./gachiakuta-anime.webp" alt="" width="170px">
+        <p>Gachiakuta S01 | <br> Anime TV Series</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./house-of-david-season-2-tv-series.webp" alt="" width="170px">
+        <p>House Of David S02 |<br>TV Series</p></a>
+    </div>
+     <div class="video">
+       <a href=""> <img src="./mayor-of-kingstown-hollywoodseries-683x1024.jpg" alt="" width="170px">
+        <p>Mayor Of Kingstown S04 | <br>TV Series</p></a>
+    </div>
+</div><br>
+<div class="container">
+ <div class="video">
+       <a href="#"> <img src="./nobody-wants-this-tv-series.webp" alt="" width="170px">
+        <p>Nobody Wants This S02 | <br>TV Series</p></a>
+    </div>
+     <div class="video">
+       <a href="#"> <img src="./one-punch-man-anime-683x1024.webp" alt="" width="170px">
+        <p>One Punch Man S03 | <br> Anime TV Series</p></a>
+    </div>
+     <div class="video">
+       <a href="#"> <img src="./talamasca-the-secret-order-tv-series.webp" alt="" width="170px">
+      <p>Talamasca The Secret Order S01 | <br>TV Series</p></a>
+    </div>
+     <div class="video">
+        <a href="#"><img src="./the-chair-company-tv-series-683x1024.webp" alt="" width="170px">
+        <p>The Chair Company S01 | <br>TV Series</p></a>
+    </div>
+     <div class="video">
+        <a href="#"><img src="./tracker-tv-series.webp" alt="" width="170px">
+        <p>Tracker S03 | <br>TV Series</p></a>
+    </div>
+     <div class="video">
+        <a href="#"><img src="./tulsa-king-hollywood-series.webp" alt="" width="170px">
+       <p>Tusla King S03 | <br>TV series</p></a> 
+    </div>
+</div>
+<br>
+<br>
+<div style="background-color: white;text-align: center;width: 100%;padding:px;border-top: 2px solid gray;">
+<p style="align-self: center;"><b>MoviesHub|@2025</b></p>
+<p><b>Follow Us On X </b><a href="https://x.com/DanielAgun19568" target="_blank"><img style="border: 1px solid darkblue;border-radius: 20px;background-color: darkblue;" src="./twitter.svg" alt="" width="20px"></a></p>
+</div>
+<script>
+function toggleDropdown() {
+    document.getElementById("dropdowns").classList.toggle("show");
+}
+window.onclick = function(event) {
+    if (!event.target.matches("img")) {
+        const dropdown = document.getElementById("dropdowns");
+        if(dropdown.classList.contains("show")) {
+            dropdown.classList.remove("show");
+        }
+    }
+}
+
+</script>
 </body>
 </html>
