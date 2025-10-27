@@ -216,6 +216,35 @@ background: gray;
 }.show{
     display: block;
 }
+.sub-dropdown{
+    display: none;
+    background: #e9ecef;
+     width: 120px;
+top:100%;
+position: relative;
+
+right: 50%;
+padding: 20px;
+}
+.sub-dropdown a{
+    padding-left: 30px;
+    border-bottom: none;
+}
+.sub-dropdown.show{
+    display: block;
+}
+#backToTop{
+    display: none;
+    position: fixed;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    bottom: 100px;right: 20px;
+}
+#backToTop:hover{
+    background-color: #555;
+}
 </style>
 <body>
     <nav class="navbar">
@@ -241,8 +270,8 @@ background: gray;
     <li><a href="#">Home</a></li>
     <li><a href="#">Anime Series</a></li>
     <li><a href="#">TV Series</a></li>
-    <li><a href="#" style="height: 170%;">Genres ▼ </a>
-        <ul class="dropdown">
+    <li><a class="sub-btn" onclick="toggleSubDropdown(event)" href="#" style="height: 170%;">Genres ▼ </a>
+        <ul class="sub-dropdown">
             <li><a href="#">Action</a></li>
             <li><a href="#">Adventures</a></li>
             <li><a href="#">Animation</a></li>
@@ -256,6 +285,7 @@ background: gray;
        
     </nav>
     <hr>
+    <button id="backToTop">GO TO TOP</button>
 <h1 style="text-align: center;">DOWNLOAD YOUR FAVOURITES MOVIES HERE</h1>
 <h3 style="color: red;text-align: center;">K-Drama Series</h3>
 <div class="container">
@@ -418,13 +448,20 @@ background: gray;
 </div>
 <br>
 <br>
+
 <div style="background-color: white;text-align: center;width: 100%;padding:px;border-top: 2px solid gray;">
 <p style="align-self: center;"><b>MoviesHub|@2025</b></p>
 <p><b>Follow Us On X </b><a href="https://x.com/DanielAgun19568" target="_blank"><img style="border: 1px solid darkblue;border-radius: 20px;background-color: darkblue;" src="./twitter.svg" alt="" width="20px"></a></p>
 </div>
+ 
 <script>
 function toggleDropdown() {
     document.getElementById("dropdowns").classList.toggle("show");
+}
+function toggleSubDropdown(event) {
+    event.stopPropagation();
+    const nextDropdown = event.target.nextElementSibling;
+    nextDropdown.classList.toggle("show")
 }
 window.onclick = function(event) {
     if (!event.target.matches("img")) {
@@ -432,9 +469,24 @@ window.onclick = function(event) {
         if(dropdown.classList.contains("show")) {
             dropdown.classList.remove("show");
         }
+        document.querySelectorAll(".sub-dropdown").forEach(sub => sub.classList.remove("show"));
     }
 }
-
+const btn = document.getElementById("backToTop");
+window.onscroll = function(){
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const fullHeight = document.body.offsetHeight;
+    if(scrollTop + windowHeight >= fullHeight - 0) {
+        btn.style.display = "block";}
+        else {
+            btn.style.display = "none";
+        }
+    
+};
+btn.onclick = function() {
+    window.scrollTo({top:0, behavior:"smooth"});
+};
 </script>
 </body>
 </html>
